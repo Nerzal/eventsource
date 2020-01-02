@@ -111,8 +111,13 @@ func (store *store) Load(ctx context.Context, aggregateID string, fromVersion, t
 		return nil, errors.Wrap(err, "could not decode record history")
 	}
 
+	history := store.filterRecords(mongoRecord.Records, fromVersion, toVersion)
+	return history, nil
+}
+
+func (store *store) filterRecords(records []eventsource.Record, fromVersion, toVersion int) []eventsource.Record {
 	var history []eventsource.Record
-	for _, record := range mongoRecord.Records {
+	for _, record := range records {
 		if record.Version < fromVersion {
 			continue
 		}
@@ -124,5 +129,5 @@ func (store *store) Load(ctx context.Context, aggregateID string, fromVersion, t
 		history = append(history, record)
 	}
 
-	return history, nil
+	return history
 }
