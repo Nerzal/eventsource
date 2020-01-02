@@ -15,7 +15,7 @@ library.  What AWS can handle, I'd rather have AWS handle.
 ## Installation
 
 ```
-go get github.com/altairsix/eventsource/...
+go get github.com/nerzal/eventsource/...
 ```
 
 ## Getting Started
@@ -63,9 +63,9 @@ Provides the data access layer to store and retrieve events into a persistent st
 
 ### Store
 
-Represents the underlying data storage mechanism.  eventsource only supports dynamodb out of the
+Represents the underlying data storage mechanism.  eventsource only supports dynamodb and Mongodb out of the
 box, but there's no reason future versions could not support other database technologies like
-MySQL, Postgres or Mongodb. 
+MySQL, Postgres. 
 
 ### Serializer
 
