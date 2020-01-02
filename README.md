@@ -1,15 +1,17 @@
-[![GoDoc](https://godoc.org/github.com/altairsix/eventsource?status.svg)](https://godoc.org/github.com/altairsix/eventsource) ![Travis CI](https://travis-ci.org/altairsix/eventsource.svg?branch=master) 
+# eventsource
 
-```eventsource``` is a Serverless event sourcing library for Go that attempts to 
-leverage the capabilities of AWS to simplify the development and operational 
+[![GoDoc](https://godoc.org/github.com/altairsix/eventsource?status.svg)](https://godoc.org/github.com/altairsix/eventsource) ![Travis CI](https://travis-ci.org/altairsix/eventsource.svg?branch=master)
+
+```eventsource``` is a Serverless event sourcing library for Go that attempts to
+leverage the capabilities of AWS to simplify the development and operational
 requirements for event sourcing projects.
 
 This library is still under development and changes to the core api are likely.
 
-Take advantage of the scalability, high availability, clustering, and strong 
+Take advantage of the scalability, high availability, clustering, and strong
 security model you've come to know and love with AWS.
- 
-Serverless and accessible were significant design considerations in the creation of this 
+
+Serverless and accessible were significant design considerations in the creation of this
 library.  What AWS can handle, I'd rather have AWS handle.
 
 ## Installation
@@ -20,8 +22,8 @@ go get github.com/nerzal/eventsource/...
 
 ## Getting Started
 
-The easiest way to get started is to check out the _examples directory.  gopherfest has the 
-most complete example.  Before you run the gopherfest example, you'll need to (a) ensure you 
+The easiest way to get started is to check out the _examples directory.  gopherfest has the
+most complete example.  Before you run the gopherfest example, you'll need to (a) ensure you
 have AWS credentials loaded into your environment and (b) then run:
 
 ```
@@ -38,7 +40,7 @@ git is a great analogy. each commit becomes an event and when you clone or pull
 the repo, git uses that sequence of commits (events) to rebuild the project
 file structure (the domain model).
 
-Greg Young has an excellent primer on event sourcing that can found on the 
+Greg Young has an excellent primer on event sourcing that can found on the
 [EventStore docs page](http://docs.geteventstore.com/introduction/4.0.0/event-sourcing-basics/).
 
 ![Overview](https://s3.amazonaws.com/site-eventsource/Overview.png)
@@ -46,7 +48,7 @@ Greg Young has an excellent primer on event sourcing that can found on the
 ### Event
 
 Events represent domain events and should be expressed in the past tense such as CustomerMoved,
-OrderShipped, or EmailAddressChanged.  These are irrefutable facts that have completed in the 
+OrderShipped, or EmailAddressChanged.  These are irrefutable facts that have completed in the
 past.  
 
 Try to avoid sticking derived values into the events as (a) events are long lived and bugs in the
@@ -65,7 +67,7 @@ Provides the data access layer to store and retrieve events into a persistent st
 
 Represents the underlying data storage mechanism.  eventsource only supports dynamodb and Mongodb out of the
 box, but there's no reason future versions could not support other database technologies like
-MySQL, Postgres. 
+MySQL, Postgres.
 
 ### Serializer
 
@@ -116,11 +118,10 @@ The ```scenario``` package simplifies testing.
         Then(&OrderCreated{})   // expect the following events to be emitted
 ```
 
-### Todo 
+### Todo
 
 - [ ] document singleton usage
 - [ ] implement dynamodb to sns lambda function
 - [ ] implement dynamodb to kinesis firehose lambda function
 - [ ] document stream replay via s3
 - [ ] add support for terraform in tooling
-
