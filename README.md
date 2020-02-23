@@ -1,6 +1,7 @@
 # eventsource
 
-[![GoDoc](https://godoc.org/github.com/altairsix/eventsource?status.svg)](https://godoc.org/github.com/altairsix/eventsource) ![Travis CI](https://travis-ci.org/altairsix/eventsource.svg?branch=master)
+[![GoDoc](https://godoc.org/github.com/altairsix/eventsource?status.svg)](https://godoc.org/github.com/altairsix/eventsource) ![Travis CI](https://travis-ci.org/altairsix/eventsource.svg?branch=master)[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FNerzal%2Feventsource.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FNerzal%2Feventsource?ref=badge_shield)
+
 
 ```eventsource``` is a Serverless event sourcing library for Go that attempts to
 leverage the capabilities of AWS to simplify the development and operational
@@ -125,3 +126,7 @@ The ```scenario``` package simplifies testing.
 - [ ] implement dynamodb to kinesis firehose lambda function
 - [ ] document stream replay via s3
 - [ ] add support for terraform in tooling
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FNerzal%2Feventsource.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FNerzal%2Feventsource?ref=badge_large)
